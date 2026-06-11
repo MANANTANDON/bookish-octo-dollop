@@ -1,8 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleClick = () => {
     menuOpen ? setMenuOpen(false) : setMenuOpen(true);
@@ -20,8 +35,11 @@ export const Header = () => {
           􀍠
         </button>
         {menuOpen && (
-          <div className="absolute right-4 top-12 font-light text-sm shadow-2xl px-2 py-1.5 rounded-xl text-sky-700 bg-[#FFFFFF] cursor-help border border-zinc-200/50">
-            􀅴 Link share userguide
+          <div
+            ref={menuRef}
+            className="absolute right-4 top-12 font-normal text-sm shadow-2xl px-2 py-1.5 rounded-xl text-sky-700 bg-[#FFFFFF] cursor-help border border-zinc-200/50"
+          >
+            􀅴 LinkSharer User Guide
           </div>
         )}
       </div>

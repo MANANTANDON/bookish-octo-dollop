@@ -22,7 +22,7 @@ export const UserDashboard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.name !== "" && formData.email !== "" && formData.bio !== "") {
+    if (formData.name !== "" && formData.email !== "") {
       setPreview(true);
     } else {
       return;
@@ -48,118 +48,65 @@ export const UserDashboard = () => {
 
   return (
     <>
-      <div className="flex flex-row-reverse py-1.5 px-2">
+      <div className="flex items-center justify-between py-1.5 px-2 bg-zinc-100/10 backdrop-blur-md sticky top-0 z-10">
+        <a
+          href="/"
+          className="font-bold text-xl tracking-tighter text-zinc-100"
+        >
+          <span className="text-lg font-extrabold">􀉣</span>LinkSharer
+        </a>
         <div
-          className="hover:bg-zinc-500/10 w-fit px-2 py-1.5 rounded-lg cursor-pointer"
+          className="hover:bg-zinc-100/20 w-fit px-2 py-1.5 rounded-lg cursor-pointer text-zinc-50"
           onClick={handleLogout}
         >
           􀻵
         </div>
       </div>
-      <div className="flex items-center justify-center min-h-screen my-5">
-        <form onSubmit={handleSubmit}>
-          <div className=" w-90  md:w-125 max-w-125 flex flex-col gap-5 px-4">
-            {formData.profilePic && (
-              <div className="relative h-20 w-20 rounded-full overflow-hidden">
-                <Image
-                  src={formData.profilePic}
-                  fill
-                  alt="Profile Picture"
-                  style={{ objectFit: "cover" }}
-                />
+      <div className="container mx-auto mt-10">
+        <div className="flex justify-center mb-10">
+          <form onSubmit={handleSubmit}>
+            <div className=" w-90  md:w-125 max-w-125 flex flex-col gap-5 px-4">
+              <div className="bg-zinc-50/60 backdrop-blur-2xl w-full max-w-125 p-7 rounded-xl">
+                {formData.profilePic && (
+                  <div className="relative h-30 w-30 rounded-full overflow-hidden">
+                    <Image
+                      src={formData.profilePic}
+                      fill
+                      alt="Profile Picture"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                )}
+                <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 mt-8 mb-4">
+                  {formData?.name}
+                </h1>
+                <h4 className="text-lg text-zinc-900/60 mb-2">
+                  {formData?.email}
+                </h4>
+                <h5 className="text-xl font-medium tracking-tight">
+                  LinkSharer<sup>+</sup>
+                </h5>
               </div>
-            )}
-            <div>
-              <h2>Name</h2>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                placeholder="Write your name here..."
-                className="border border-zinc-500 px-4 py-2 rounded-[100px] w-full"
-                onChange={handleChange}
-              />
+              <div>
+                <button
+                  className="bg-zinc-900 text-zinc-100 w-full py-2.5 rounded-[100px] cursor-pointer font-semibold text-lg"
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+              {preview && (
+                <button
+                  className="bg-zinc-50 backdrop-blur-xl text-zinc-900  w-full py-2.5 rounded-[100px] cursor-pointer font-semibold text-lg"
+                  type="button"
+                  onClick={() => router.push("/preview")}
+                >
+                  Preview
+                </button>
+              )}
             </div>
-
-            <div>
-              <h2>Username</h2>
-              <input
-                type="text"
-                name="username"
-                value={formData.username}
-                placeholder="e.g. manan"
-                className="border border-zinc-500 px-4 py-2 rounded-[100px] w-full"
-                onChange={handleChange}
-              />
-            </div>
-
-            <div>
-              <h2>Email</h2>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                placeholder="Write your email here..."
-                className="border border-zinc-500 px-4 py-2 rounded-[100px] w-full"
-                onChange={handleChange}
-              />
-            </div>
-
-            <div>
-              <h2>Bio</h2>
-              <textarea
-                name="bio"
-                placeholder="Write your bio..."
-                rows={3}
-                value={formData.bio}
-                className="border border-zinc-500 p-4 rounded-[20px] w-full"
-                onChange={handleChange}
-              />
-            </div>
-
-            <div>
-              <h2>Location</h2>
-              <input
-                type="text"
-                name="location"
-                value={formData.location}
-                placeholder="e.g. New Delhi, India"
-                className="border border-zinc-500 px-4 py-2 rounded-[100px] w-full"
-                onChange={handleChange}
-              />
-            </div>
-
-            <div>
-              <h2>Website</h2>
-              <input
-                type="url"
-                name="website"
-                value={formData.website}
-                placeholder="https://yourwebsite.com"
-                className="border border-zinc-500 px-4 py-2 rounded-[100px] w-full"
-                onChange={handleChange}
-              />
-            </div>
-
-            <div>
-              <button
-                className="bg-zinc-900 text-zinc-100 w-full py-2.5 rounded-[100px] cursor-pointer font-semibold text-lg"
-                type="submit"
-              >
-                Save
-              </button>
-            </div>
-            {preview && (
-              <button
-                className="bg-zinc-50 text-zinc-900 border border-zinc-900 w-full py-2.5 rounded-[100px] cursor-pointer font-semibold text-lg"
-                type="button"
-                onClick={() => router.push("/preview")}
-              >
-                Preview
-              </button>
-            )}
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </>
   );
