@@ -10,9 +10,12 @@ export default function Page() {
         <div>
           <h1>This is your preview screen !</h1>
           <div className="flex flex-col mt-10">
-            <div>{formData.name}</div>
-            <div>{formData.email}</div>
-            <div>{formData.bio}</div>
+            <div>{formData?.name}</div>
+            <div>{formData?.username}</div>
+            <div>{formData?.email}</div>
+            <div>{formData?.location}</div>
+            <div>{formData?.website}</div>
+            <div>{formData?.bio}</div>
           </div>
         </div>
       </div>
