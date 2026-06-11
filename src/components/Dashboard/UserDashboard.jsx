@@ -48,9 +48,9 @@ export const UserDashboard = () => {
 
   return (
     <>
-      <div className="flex flex-row-reverse p-1">
+      <div className="flex flex-row-reverse py-1.5 px-2">
         <div
-          className="hover:bg-zinc-500/20 w-fit px-2 py-1.5 rounded-lg cursor-pointer"
+          className="hover:bg-zinc-500/10 w-fit px-2 py-1.5 rounded-lg cursor-pointer"
           onClick={handleLogout}
         >
           􀻵
