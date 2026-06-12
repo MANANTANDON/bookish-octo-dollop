@@ -1,12 +1,10 @@
-import { UserDashboard } from "@/components/Dashboard/UserDashboard";
 import React from "react";
+import { RightSide } from "@/components/Dashboard/RightSide";
 
 export default function Dashboard() {
   return (
     <>
-      <div className="bg-[#F1F2F6]">
-        <UserDashboard />
-      </div>
+      <RightSide />
     </>
   );
 }
