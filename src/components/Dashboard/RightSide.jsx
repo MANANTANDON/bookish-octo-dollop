@@ -1,15 +1,35 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useUserData } from "@/zustand/store";
 
-export const RightSide = ({ data }) => {
+export const RightSide = () => {
   const router = useRouter();
+  const { formData, setFormData } = useUserData();
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
     router.push("/");
   };
+
+  useEffect(() => {
+    const getGoogleUser = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (user && formData.name === "") {
+        setFormData({
+          ...formData,
+          name: user.user_metadata.full_name || "",
+          email: user.email || "",
+          profilePic: user.user_metadata.avatar_url || "",
+        });
+      }
+    };
+    getGoogleUser();
+  }, []);
 
   return (
     <>
@@ -19,9 +39,9 @@ export const RightSide = ({ data }) => {
         </h3>
         <div className="flex flex-col items-center gap-3">
           <div className="relative h-25 w-25 overflow-hidden rounded-[100px] shrink-0">
-            {data?.profilePic && (
+            {formData?.profilePic && (
               <Image
-                src={data?.profilePic}
+                src={formData?.profilePic}
                 alt="user Image"
                 objectFit="cover"
                 objectPosition="center"
@@ -31,10 +51,10 @@ export const RightSide = ({ data }) => {
           </div>
           <div className="w-full flex flex-col items-center">
             <h1 className="text-4xl font-bold tracking-tighter">
-              {data?.name}
+              {formData?.name}
             </h1>
             <h2 className="text-lg font-medium tracking-tight text-zinc-900/50 ">
-              {data?.email}
+              {formData?.email}
             </h2>
             <button
               className="border border-zinc-200 px-3 py-0.5 rounded-lg cursor-pointer bg-zinc-50 mt-10 text-sm font-medium tracking-tight"
