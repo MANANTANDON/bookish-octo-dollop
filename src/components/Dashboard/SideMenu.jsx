@@ -29,7 +29,9 @@ export const SideMenu = () => {
     <>
       <div className="p-2">
         <div className="p-5 flex flex-col gap-3.5 border border-zinc-50 rounded-3xl shadow-[2px_0px_12px_rgba(0,0,0,0.04),0px_2px_12px_rgba(0,0,0,0.04)] bg-zinc-100/20 h-full">
-          <h1 className="text-3xl font-bold tracking-tighter">LinkSharer</h1>
+          <h1 className="text-3xl font-semibold tracking-tighter">
+            LinkSharer
+          </h1>
           <Link href="/dashboard" className="flex items-center justify-between">
             {/* User First Card */}
             <div className="flex items-center gap-3.5 bg-[#FFFFFF] w-full p-4 rounded-[30px]">
@@ -45,10 +47,10 @@ export const SideMenu = () => {
                 )}
               </div>
               <div className="w-full">
-                <h1 className="text-2xl font-bold tracking-tighter">
+                <h1 className="text-[19px] font-medium tracking-tighter">
                   {formData?.name}
                 </h1>
-                <h2 className="text-sm font-medium tracking-tight text-zinc-900/50 -mt-1 ">
+                <h2 className="text-[12px] font-medium tracking-tight text-zinc-900/50 ">
                   {formData?.email}
                 </h2>
               </div>
@@ -60,18 +62,18 @@ export const SideMenu = () => {
               <Link
                 href={item.route}
                 key={key}
-                className="pt-2 px-4 flex items-center gap-3 w-full "
+                className="pt-1 px-4 flex items-center gap-3 w-full "
               >
                 <div
                   style={{
                     background: `linear-gradient(145deg, rgba(255,255,255,0.15) -20%, ${item.color} 30%)`,
                   }}
-                  className={`w-9 h-8 text-sm flex items-center justify-center mb-1.5 rounded-md text-zinc-100`}
+                  className={`w-8.75 h-7.5 text-sm flex items-center justify-center mb-1.5 rounded-md text-zinc-100`}
                 >
                   {item.icon}
                 </div>
                 <div
-                  className={`${key !== SIDEMENU.length - 1 && "border-b border-[#E7E7E8]"} w-full pb-1.5 font-medium tracking-tight`}
+                  className={`${key !== SIDEMENU.length - 1 && "border-b border-[#E7E7E8]"} w-full pb-1.5 text-[15px] tracking-tight`}
                 >
                   {item.title}
                 </div>
