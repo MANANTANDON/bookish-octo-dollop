@@ -1,33 +1,21 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 
-export const useUserData = create(
-  persist(
-    (set) => ({
+export const useUserData = create((set) => ({
+  formData: {
+    name: "",
+    email: "",
+    bio: "",
+    username: "",
+    location: "",
+    website: "",
+    profilePic: "",
+  },
+  setFormData: (newData) => set({ formData: newData }),
+  updateField: (field, value) =>
+    set((state) => ({
       formData: {
-        name: "",
-        email: "",
-        username: "",
-        bio: "",
-        location: "",
-        website: "",
-        profilePic: "",
+        ...state.formData,
+        [field]: value,
       },
-
-      //adds initial data
-      setFormData: (newData) => set({ formData: newData }),
-
-      //update the data
-      updateField: (field, value) =>
-        set((state) => ({
-          formData: {
-            ...state.formData,
-            [field]: value,
-          },
-        })),
-    }),
-    {
-      name: "user-data",
-    },
-  ),
-);
+    })),
+}));

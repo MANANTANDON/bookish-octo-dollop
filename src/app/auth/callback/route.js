@@ -24,7 +24,22 @@ export async function GET(request) {
         },
       },
     );
-    await supabase.auth.exchangeCodeForSession(code);
+
+    const {
+      data: { user },
+    } = await supabase.auth.exchangeCodeForSession(code);
+
+    // User ko DB mein save karo
+    if (user) {
+      await supabase.from("users").upsert(
+        {
+          id: user.id,
+          name: user.user_metadata.full_name,
+          email: user.email,
+        },
+        { onConflict: "id" },
+      );
+    }
   }
 
   return NextResponse.redirect(`${origin}/dashboard`);
