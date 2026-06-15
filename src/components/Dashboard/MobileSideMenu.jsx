@@ -5,7 +5,7 @@ import { supabase } from "@/lib/supabase";
 import { useUserData } from "@/zustand/store";
 import Link from "next/link";
 
-export const SideMenu = () => {
+export const MobileSideMenu = () => {
   const { formData, setFormData } = useUserData();
 
   useEffect(() => {
@@ -32,7 +32,10 @@ export const SideMenu = () => {
           <h1 className="text-3xl font-semibold tracking-tighter">
             LinkSharer
           </h1>
-          <Link href="/dashboard" className="flex items-center justify-between">
+          <Link
+            href="/dashboard/user"
+            className="flex items-center justify-between"
+          >
             {/* User First Card */}
             <div className="flex items-center gap-3.5 bg-[#FFFFFF] w-full p-4 rounded-[30px]">
               <div className="relative h-17.5 w-17.5 overflow-hidden rounded-[100px] shrink-0">

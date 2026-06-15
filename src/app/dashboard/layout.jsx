@@ -6,10 +6,12 @@ export default function Layout({ children }) {
   return (
     <>
       <div className="bg-[#F1F2F6] h-screen">
-        <div className="grid grid-cols-[350px_1fr] h-full">
-          <SideMenu />
+        <div className="grid grid-cols-1 lg:grid-cols-[350px_1fr] h-full">
+          <div className="hidden lg:block">
+            <SideMenu />
+          </div>
 
-          <div className="overflow-y-auto flex justify-center">{children}</div>
+          <div className="overflow-y-auto flex justify-center ">{children}</div>
         </div>
       </div>
     </>

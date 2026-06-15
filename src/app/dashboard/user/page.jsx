@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useUserData } from "@/zustand/store";
 import { QRCodeSVG } from "qrcode.react";
-import { MobileSideMenu } from "@/components/Dashboard/MobileSideMenu";
+import Link from "next/link";
 
-export default function Dashboard() {
+export default function User() {
   const router = useRouter();
   const { formData, setFormData } = useUserData();
   const [preview, setPreview] = useState(false);
@@ -40,7 +40,13 @@ export default function Dashboard() {
 
   return (
     <>
-      <div className="p-5 h-full w-full max-w-5xl hidden lg:flex flex-col items-center gap-10">
+      <div className="relative p-5 h-full w-full max-w-5xl flex flex-col items-center gap-10">
+        <Link
+          href="/"
+          className="absolute top-5 left-5 border border-zinc-50 rounded-[100px] shadow-[2px_0px_12px_rgba(0,0,0,0.04),0px_2px_12px_rgba(0,0,0,0.04)] bg-zinc-100/20 px-3 py-1.5 "
+        >
+          􀯶
+        </Link>
         <h3 className="text-lg font-semibold tracking-tight">
           User Information
         </h3>
@@ -97,9 +103,6 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-screen lg:hidden">
-        <MobileSideMenu />
       </div>
     </>
   );

@@ -2,6 +2,7 @@
 import { supabase } from "@/lib/supabase";
 import React, { useEffect, useState } from "react";
 import { useUserData } from "@/zustand/store";
+import Link from "next/link";
 
 export default function MusicAndAudio() {
   const { linksCache, setLinksCache } = useUserData();
@@ -116,7 +117,13 @@ export default function MusicAndAudio() {
   ];
 
   return (
-    <div className="p-5 h-full w-full max-w-5xl flex flex-col gap-10 mt-10">
+    <div className="p-5 h-full w-full max-w-5xl flex flex-col gap-10 pt-20 relative">
+      <Link
+        href="/"
+        className="absolute top-5 left-5 border border-zinc-50 rounded-[100px] shadow-[2px_0px_12px_rgba(0,0,0,0.04),0px_2px_12px_rgba(0,0,0,0.04)] bg-zinc-100/20 px-3 py-1.5 backdrop-blur-xs"
+      >
+        􀯶
+      </Link>
       <div className="bg-zinc-50 rounded-[20px] py-5.5 px-6.25 flex flex-col gap-3">
         <h2 className="text-xl font-bold tracking-tight">
           Music & Audio Links
@@ -146,7 +153,7 @@ export default function MusicAndAudio() {
         ))}
       </div>
 
-      <div className="flex flex-row-reverse">
+      <div className="flex flex-row-reverse pb-10">
         <button
           onClick={handleSave}
           className="border border-zinc-300 bg-zinc-50 py-0.5 px-4 rounded-[100px] text-sm tracking-tight font-semibold cursor-pointer"

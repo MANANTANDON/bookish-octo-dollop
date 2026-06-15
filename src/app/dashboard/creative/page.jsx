@@ -2,6 +2,7 @@
 import { supabase } from "@/lib/supabase";
 import React, { useEffect, useState } from "react";
 import { useUserData } from "@/zustand/store";
+import Link from "next/link";
 
 export default function Creative() {
   const { linksCache, setLinksCache } = useUserData();
@@ -116,7 +117,13 @@ export default function Creative() {
   ];
 
   return (
-    <div className="p-5 h-full w-full max-w-5xl flex flex-col gap-10 mt-10">
+    <div className="p-5 h-full w-full max-w-5xl flex flex-col gap-10 pt-20 relative">
+      <Link
+        href="/"
+        className="absolute top-5 left-5 border border-zinc-50 rounded-[100px] shadow-[2px_0px_12px_rgba(0,0,0,0.04),0px_2px_12px_rgba(0,0,0,0.04)] bg-zinc-100/20 px-3 py-1.5 "
+      >
+        􀯶
+      </Link>
       <div className="bg-zinc-50 rounded-[20px] py-5.5 px-6.25 flex flex-col gap-3">
         <h2 className="text-xl font-bold tracking-tight">Creative Links</h2>
         <h4 className="text-zinc-500">
