@@ -1,4 +1,5 @@
 "use client";
+import { NavigationHeader } from "@/components/Dashboard/NavigationHeader";
 import { supabase } from "@/lib/supabase";
 import { useUserData } from "@/zustand/store";
 import Link from "next/link";
@@ -91,13 +92,8 @@ export default function Professional() {
   };
 
   return (
-    <div className="p-5 h-full w-full max-w-5xl flex flex-col gap-15 pt-20 relative">
-      <Link
-        href="/"
-        className="absolute top-5 left-5 border border-zinc-50 rounded-[100px] shadow-[2px_0px_12px_rgba(0,0,0,0.04),0px_2px_12px_rgba(0,0,0,0.04)] bg-zinc-100/20 px-3 py-1.5 "
-      >
-        􀯶
-      </Link>
+    <div className="px-5 pb-20 h-full w-full max-w-5xl flex flex-col gap-10 ">
+      <NavigationHeader text="Professional Links" />
       <div className="bg-zinc-50 rounded-[20px] py-5.5 px-6.25 flex flex-col gap-3">
         <h2 className="text-xl font-bold tracking-tight">Professional Links</h2>
         <h4 className="text-zinc-500">
@@ -145,10 +141,10 @@ export default function Professional() {
         </div>
       </div>
 
-      <div className="flex flex-row-reverse">
+      <div className="flex pb-20">
         <button
           onClick={handleSave}
-          className="border border-zinc-300 bg-zinc-50 py-0.5 px-4 rounded-[100px] text-sm tracking-tight font-semibold cursor-pointer"
+          className="bg-[#0088FF] text-zinc-50 px-5 py-1.5 rounded-[100px] text-sm tracking-tight font-semibold cursor-pointer"
         >
           {saving ? "Saving..." : "Save"}
         </button>

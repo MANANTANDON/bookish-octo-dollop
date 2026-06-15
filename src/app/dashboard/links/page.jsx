@@ -1,4 +1,5 @@
 "use client";
+import { NavigationHeader } from "@/components/Dashboard/NavigationHeader";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -13,13 +14,8 @@ export default function Links() {
     );
   };
   return (
-    <div className="p-5 h-full w-full max-w-5xl flex flex-col gap-10 pt-20 relative">
-      <Link
-        href="/"
-        className="absolute top-5 left-5 border border-zinc-50 rounded-[100px] shadow-[2px_0px_12px_rgba(0,0,0,0.04),0px_2px_12px_rgba(0,0,0,0.04)] bg-zinc-100/20 px-3 py-1.5 "
-      >
-        􀯶
-      </Link>
+    <div className="px-5 pb-20 h-full w-full max-w-5xl flex flex-col gap-10 ">
+      <NavigationHeader text="Links Tab" />
       <div className="bg-zinc-50 rounded-[20px] py-5.5 px-6.25 flex flex-col gap-3">
         <h2 className="text-xl font-bold tracking-tight">Links Tab</h2>
         <h4 className="text-zinc-500">

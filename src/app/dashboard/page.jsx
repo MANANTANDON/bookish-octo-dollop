@@ -66,7 +66,7 @@ export default function Dashboard() {
             </h2>
             <div className="flex items-center gap-4">
               <button
-                className="border border-slate-300 px-3 py-0.5 rounded-lg cursor-pointer bg-zinc-50 mt-10 text-sm font-medium tracking-tight"
+                className="bg-[#0088FF] hover:bg-[#006FD6] text-zinc-50 px-5 py-1.5 rounded-[100px] cursor-pointer mt-10 text-sm font-medium tracking-tight transition-colors duration-200"
                 onClick={handleLogout}
               >
                 logout
@@ -74,13 +74,13 @@ export default function Dashboard() {
 
               <div className="relative">
                 <button
-                  className="border border-slate-300 px-3 py-0.5 rounded-lg cursor-pointer bg-zinc-50 mt-10 text-sm font-medium tracking-tight"
+                  className="border border-[#0088FF] text-[#0088FF] px-5 py-1.5  rounded-[100px] cursor-pointer mt-10 text-sm font-medium tracking-tight"
                   onClick={handlePreview}
                 >
                   preview
                 </button>
                 {preview && (
-                  <div className="absolute top-18 left-1 bg-[#FFFFFF] p-5 rounded-xl border border-slate-300">
+                  <div className="absolute top-20 left-1 bg-[#FFFFFF] p-5 rounded-xl border border-slate-300">
                     <QRCodeSVG
                       value="https://bookish-octo-dollop-seven.vercel.app/preview"
                       size={180}

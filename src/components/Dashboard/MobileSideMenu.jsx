@@ -27,8 +27,8 @@ export const MobileSideMenu = () => {
 
   return (
     <>
-      <div className="p-2 h-full">
-        <div className="p-5 flex flex-col gap-3.5 border border-zinc-50 rounded-3xl shadow-[2px_0px_12px_rgba(0,0,0,0.04),0px_2px_12px_rgba(0,0,0,0.04)] bg-zinc-100/20 h-full">
+      <div className="p-5 h-full">
+        <div className="flex flex-col gap-3.5 rounded-3xl h-full">
           <h1 className="text-3xl font-semibold tracking-tighter">
             LinkSharer
           </h1>
@@ -60,7 +60,7 @@ export const MobileSideMenu = () => {
             </div>
           </Link>
           {/* Side Menu */}
-          <div className="flex flex-col bg-[#FFFFFF] w-full rounded-[20px] py-1">
+          <div className="flex flex-col bg-[#FFFFFF] w-full rounded-[20px] py-1.5">
             {SIDEMENU.map((item, key) => (
               <Link
                 href={item.route}
