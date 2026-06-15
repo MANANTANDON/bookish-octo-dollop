@@ -7,7 +7,7 @@ export const HomePage = () => {
     <>
       <div className="flex flex-col items-center gap-7 mt-10 ">
         <Image
-          src={"/images/logoImage.png"}
+          src={"/images/bgcloud.png"}
           alt="Logo Images"
           width={1306}
           height={832}

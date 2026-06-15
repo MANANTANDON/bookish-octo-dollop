@@ -80,6 +80,25 @@ export const SideMenu = () => {
               </Link>
             ))}
           </div>
+          {/* Links Tab */}
+          <div className="flex flex-col bg-[#FFFFFF] w-full rounded-[20px] py-1">
+            <Link
+              href="/dashboard/links"
+              className="pt-1 px-4 flex items-center gap-3 w-full "
+            >
+              <div
+                style={{
+                  background: `linear-gradient(145deg, rgba(255,255,255,0.15) -20%, #FA0B41 30%)`,
+                }}
+                className={`w-8.75 h-7.5 text-sm flex items-center justify-center mb-1.5 rounded-md text-zinc-100`}
+              >
+                􀒟
+              </div>
+              <div className="w-full pb-1.5 text-[15px] tracking-tight">
+                Links
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </>
