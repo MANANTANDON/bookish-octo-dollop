@@ -72,7 +72,7 @@ export default function Dashboard() {
                 logout
               </button>
 
-              <div className="relative">
+              {/* <div className="relative">
                 <button
                   className="border border-[#0088FF] text-[#0088FF] px-5 py-1.5  rounded-[100px] cursor-pointer mt-10 text-sm font-medium tracking-tight"
                   onClick={handlePreview}
@@ -94,7 +94,7 @@ export default function Dashboard() {
                     </h1>
                   </div>
                 )}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

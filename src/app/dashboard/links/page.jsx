@@ -214,6 +214,14 @@ export default function Links() {
     <div className="px-5 h-full w-full max-w-5xl flex flex-col gap-10 mb-20">
       <NavigationHeader text="Links Tabs" />
       <div className="bg-zinc-50 rounded-[20px] py-5.5 px-6.25 flex flex-col gap-3">
+        <div
+          style={{
+            background: `linear-gradient(145deg, rgba(255,255,255,0.15) -20%, #FA0B41 30%)`,
+          }}
+          className="text-zinc-50 h-15 md:h-18 w-15 md:w-18 rounded-xl flex items-center justify-center text-2xl md:text-3xl"
+        >
+          􀒟
+        </div>
         <h2 className="text-xl font-bold tracking-tight">Links Tab</h2>
         <h4 className="text-zinc-500">
           Manage and create custom sharable links for professions, music, etc.
@@ -226,13 +234,15 @@ export default function Links() {
       <div className="flex flex-row-reverse">
         <LinksCreateButton
           onClick={openModal}
-          disabled={pages.length >= MAX_PAGES}
+          disabled={pages.length >= MAX_PAGES || loading}
         />
       </div>
 
       <div>
         {loading ? (
-          <div className="bg-zinc-800 rounded-[20px] py-5.5 px-6.25 h-100" />
+          <div className="bg-zinc-50 rounded-[20px] py-5.5 px-6.25 h-100 text-zinc-900 flex items-center justify-center tracking-tight">
+            Loading...
+          </div>
         ) : pages.length === 0 ? (
           <div className="flex flex-col items-center justify-center gap-5 bg-zinc-50 rounded-[20px] py-5.5 px-6.25 h-100">
             <h2 className="text-2xl font-semibold tracking-tight">
@@ -240,7 +250,7 @@ export default function Links() {
             </h2>
             <LinksCreateButton
               onClick={openModal}
-              disabled={pages.length >= MAX_PAGES}
+              disabled={pages.length >= MAX_PAGES || loading}
             />
           </div>
         ) : (

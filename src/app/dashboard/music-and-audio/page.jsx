@@ -121,6 +121,14 @@ export default function MusicAndAudio() {
     <div className="px-5 pb-20  h-full w-full max-w-5xl flex flex-col gap-10">
       <NavigationHeader text="Music & Audio" />
       <div className="bg-zinc-50 rounded-[20px] py-5.5 px-6.25 flex flex-col gap-3">
+        <div
+          style={{
+            background: `linear-gradient(145deg, rgba(255,255,255,0.15) -20%, #008BFF 30%)`,
+          }}
+          className="text-zinc-50 h-15 md:h-18 w-15 md:w-18 rounded-xl flex items-center justify-center text-2xl md:text-3xl"
+        >
+          􃁮
+        </div>
         <h2 className="text-xl font-bold tracking-tight">
           Music & Audio Links
         </h2>

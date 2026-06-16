@@ -50,10 +50,10 @@ export const MobileSideMenu = () => {
                 )}
               </div>
               <div className="w-full">
-                <h1 className="text-[19px] font-medium tracking-tighter">
+                <h1 className="text-lg font-medium tracking-tighter">
                   {formData?.name}
                 </h1>
-                <h2 className="text-[12px] font-medium tracking-tight text-zinc-900/50 ">
+                <h2 className="text-[13px] font-medium tracking-tight text-zinc-900/50 ">
                   {formData?.email}
                 </h2>
               </div>
@@ -65,18 +65,18 @@ export const MobileSideMenu = () => {
               <Link
                 href={item.route}
                 key={key}
-                className="pt-1 px-4 flex items-center gap-3 w-full "
+                className="flex items-center gap-3 w-full px-3.25"
               >
                 <div
                   style={{
                     background: `linear-gradient(145deg, rgba(255,255,255,0.15) -20%, ${item.color} 30%)`,
                   }}
-                  className={`w-8.75 h-7.5 text-sm flex items-center justify-center mb-1.5 rounded-md text-zinc-100`}
+                  className="w-8.75 h-7.5 text-sm flex items-center justify-center rounded-md text-zinc-100"
                 >
                   {item.icon}
                 </div>
                 <div
-                  className={`${key !== SIDEMENU.length - 1 && "border-b border-[#E7E7E8]"} w-full pb-1.5 text-[15px] tracking-tight`}
+                  className={`${key !== SIDEMENU.length - 1 && "border-b border-[#E7E7E8]"} w-full text-base tracking-tight py-3.25`}
                 >
                   {item.title}
                 </div>
@@ -84,20 +84,20 @@ export const MobileSideMenu = () => {
             ))}
           </div>
           {/* Links Tab */}
-          <div className="flex flex-col bg-[#FFFFFF] w-full rounded-[20px] py-1">
+          <div className="flex flex-col bg-[#FFFFFF] w-full rounded-[20px] py-1.5">
             <Link
               href="/dashboard/links"
-              className="pt-1 px-4 flex items-center gap-3 w-full "
+              className="px-3.25 flex items-center gap-3 w-full "
             >
               <div
                 style={{
                   background: `linear-gradient(145deg, rgba(255,255,255,0.15) -20%, #FA0B41 30%)`,
                 }}
-                className={`w-8.75 h-7.5 text-sm flex items-center justify-center mb-1.5 rounded-md text-zinc-100`}
+                className={`w-8.75 h-7.5 text-sm flex items-center justify-center rounded-md text-zinc-100`}
               >
                 􀒟
               </div>
-              <div className="w-full pb-1.5 text-[15px] tracking-tight">
+              <div className="w-full py-3.25 text-base tracking-tight">
                 Links
               </div>
             </Link>
