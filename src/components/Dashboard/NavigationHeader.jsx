@@ -3,7 +3,7 @@ import React from "react";
 
 export const NavigationHeader = ({ text }) => {
   return (
-    <div className="sticky top-0 py-2 text-center bg-[linear-gradient(to_bottom,#F1F2F6_0%,#F1F2F6_55%,transparent_100%)] z-10 -mb-10">
+    <div className="sticky top-0 py-2 text-center bg-[linear-gradient(to_bottom,#F1F2F6_0%,#F1F2F6_65%,transparent_105%)] z-10 -mb-10">
       <div className="py-7 text-center sticky top-0 font-semibold tracking-tight">
         {text}
         <Link
